@@ -8,6 +8,9 @@
 # install dependencies
 npm install
 
+npm install --save-dev babel-preset-stage-2
+npm install --save  vue-router
+
 # serve with hot reload at localhost:8080
 npm run dev
 
