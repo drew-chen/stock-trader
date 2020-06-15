@@ -13,7 +13,7 @@
                         type="number"
                         class="form-control"
                         placeholders="Quantity"
-                        v-model="quantity"
+                        v-model.number="quantity"
                         :class="{ danger: insufficientFunds }">
                 </div>
                 <div class="pull-right">
@@ -22,7 +22,7 @@
                         @click="buyStock"
                         :disabled="
                             quantity <= 0 
-                            || !Number.isInteger(Number(quantity))
+                            || !Number.isInteger(quantity)
                             || insufficientFunds"
                     >{{ insufficientFunds ? 'Insufficient Funds': 'Buy' }}
                     </button>
