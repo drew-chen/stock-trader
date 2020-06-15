@@ -3,7 +3,7 @@
         <app-header></app-header>
         <div class="row">
             <div class="col-xs-12">
-                <transition name="slide" mpde="out-in">
+                <transition name="slide" mode="out-in">
                     <router-view></router-view>
                 </transition>
             </div>  
@@ -38,7 +38,7 @@
 
     @keyframes slide-in {
         from {
-            transform: translate(-30px);
+            transform: translateY(-30px);
             opacity: 0;
         }
         to {
