@@ -5,10 +5,10 @@ const state = {
 };
 
 const mutations = {
-    'SET_STOCKS' (state, stock) {
+    'SET_STOCKS'(state, stock) {
         state.stocks = stocks;
     },
-    'RND_STOCKS' (state) {
+    'RND_STOCKS'(state) {
 
     }
 
@@ -16,18 +16,18 @@ const mutations = {
 
 const actions = {
     buyStock({ commit }, order) {
-        commit();
+        commit('BUY_STOCK', order);
     },
     initStocks({ commit }, order) {
         commit('SET_STOCKS', stocks);
     },
-    randomizeStocks ({commit}) {
+    randomizeStocks({ commit }) {
         commit('RND_STOCKS')
     }
 };
 
 const getters = {
-    stocks (state) {
+    stocks(state) {
         return state.stocks;
     }
 };

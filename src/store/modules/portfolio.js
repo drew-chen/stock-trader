@@ -4,7 +4,7 @@ const state = {
 };
 
 const mutations = {
-    'BUY_STOCK' (state, {stockId, quantity, stockPrice}) {
+    'BUY_STOCK'(state, {stockId, quantity, stockPrice}) {
         const record = state.stocks.find(element => element.id == stockId );
         if (record) {
             record.quantity += quantity;
@@ -14,14 +14,14 @@ const mutations = {
                 quantity,
             });
         }
+        state.funds -= stockPrice * quantity;
     },
-    'SELL_STOCK' (state, {stockId, quantitym stockPrice}) {
+    'SELL_STOCK'(state, {stockId, quantity, stockPrice}) {
         const record = state.stocks.find(element => element.id == stockId);
-        console.assert(record != null, record);
+        console.assert(record != null, "record is: " + record);
         if (record.quantity > quantity) {
             record.quantity -= quantity;
         } else {
-            console.assert(record.quantity === 0, record);
             state.stocks.splice(state.stocks.indexOf(record), 1); 
         }
         state.funds += stockPrice * quantity;
@@ -43,18 +43,29 @@ const getters = {
      * @param {Object} state Local state of portfolio.js
      * @param {Object} getters Getters of Vuex
      */
-    stockPortfolio (state, getters) {
-        return state.stocks.getters.map(stock => {
+    stockPortfolio(state, getters) {
+        console.log(getters.stocks);
+        console.log(state.stocks);
+
+        return state.stocks.map(stock => {
             const record = getters.stocks.find(element => element.id == stock.id);
+            console.log("getter" + " " + record);
             return {
                 id: stock.id,
                 quantity: stock.quantity,
                 name: record.name,
                 price: record.price
-            };
-        }); 
+            }
+        });
     },
-    funds (state) {
+    funds(state) {
         return state.funds;
     }
+};
+
+export default {
+    state,
+    mutations,
+    actions,
+    getters
 }
