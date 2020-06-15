@@ -9,7 +9,7 @@ import store from './store/store';
 Vue.use(VueRouter);
 Vue.use(VueResource);
 
-Vue.http.options.root = '/* Firebase database URL */'
+Vue.http.options.root = '/* https://<databaseName>.firebaseio.com */' // Replace me!
 
 Vue.filter('currency', value => {
   return '$' + value.toLocaleString();
