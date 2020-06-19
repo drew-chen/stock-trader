@@ -3,12 +3,12 @@
 ![A screenshot of the app.](src/assets/Screenshot.png)
 
 
-A responsive single-page application. Buy and sell different stocks. 
+Buy and sell different stocks. A responsive single-page application from the final project from Maximilian Schwarzmüller's VueJS2 course.
 
-This uses Vue and Bootstrap for the front-end, Vue Router for routing, Vuex for state management, and Firebase Realtime Database as a test backend.
+This uses Vue, Vuex, Bootstrap, and Firebase Realtime Database.
 
 
-## Features 
+### Features 
 * Saving and loading progress from a database
 * Input validation and visualization
 * Animations between routes
@@ -16,9 +16,9 @@ This uses Vue and Bootstrap for the front-end, Vue Router for routing, Vuex for 
 <img src="src/assets/stonks.jpg" alt="stocks" width="150"/>
 
 
-## Build Setup
+### Build Setup
 
-Use or create a Firebase Realtime Database in **Test** mode. Further details can be found in [Firebase documentation](https://firebase.google.com/docs/database/web/start). Use your Firebase Database URL in [src/main.js](src/main.js). Finally,
+Use or create a Firebase Realtime Database in **Test** mode. Further details can be found in [Firebase documentation](https://firebase.google.com/docs/database/web/start). Use your Realtime Database URL in [src/main.js](src/main.js). Finally,
 
 ``` bash
 # install dependencies
